@@ -20,7 +20,7 @@
 git@github.com:li-zhi-yi/vue.git
 
 ## Project setup
-```
+``
 yarn install
 ```
 
