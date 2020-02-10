@@ -1,29 +1,54 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div id="app" class="g-container">
+    <div class="g-view-container">
+      <router-view></router-view>
     </div>
-    <router-view/>
+    <div class="footer">
+      <tabbar></tabbar>
+    </div>
   </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+html,
+body{
+  width: 100%;
+  height: 100%;
+  margin:0 auto;
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.g-container {
+  width: 100%;
+  height: 100%;
+  min-width: 320px;
+  max-width: 640px;
+  position:relative;
+  overflow: hidden;
+  // margin:0 auto;
+}
+.g-view-container{
+  width:100%;
+  height: 100%;
+  padding-bottom:50px;
+  overflow: hidden;
+}
+.footer {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  z-index: 1000;
 }
 </style>
+<script>
+import Tabbar from './components/tabbar';
+export default {
+  //注册组件
+  components: {
+    Tabbar
+  },
+  mounted() {
+   
+  }
+};
+</script>
