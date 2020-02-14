@@ -26,14 +26,15 @@ export default{
 </script>
 <style lang="scss">
 .mine-navbar{
-   position:relative;
+   position:absolute;
+   width: 100%;
    display: flex;
    justify-content: space-between;
    align-items:center;
    height:50px;
    z-index: 1000;
    text-align:center;
-   background-color:#fff;
+   background-color:transparent;
     &-left{
     margin-left:10px;
 

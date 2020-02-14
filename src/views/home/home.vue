@@ -1,11 +1,29 @@
 <template>
   <div class="home">
-    <home-header class="header" v-show="visible">
+    <home-header class="header" >
       <i class="iconfont icon-scan" slot="left"></i>
       <div slot="center">搜索框</div>
       <i class="iconfont icon-msg" slot="right"></i>
     </home-header>
-    <home-slider></home-slider>
+    <div class="home-container">
+       <home-scroll 
+       :data="recommends"
+       ref="scroll"
+       >
+      <home-slider></home-slider>
+      <home-nav></home-nav>
+    </home-scroll>
+    </div>
+  
+     <!-- pullDown
+      pullUp
+      @pull-down="pullToRefresh"
+      @pull-up="pullToLoadMore"
+      @scroll-end="scrollEnd"
+      @scroll="scroll"
+      @pull-down-transition-end="pullDownTransitionEnd" -->
+   
+    
   </div>
 </template>
 <style lang="scss">
@@ -14,29 +32,54 @@
   width: 100%;
   height: 100%;
   background-color: #f5f5f5;
+  &-container{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    
+  }
 }
 </style>
 <script>
 import HomeHeader from "../../components/header";
 import HomeSlider from "./slider";
+import HomeNav from './nav';
+import HomeScroll from '../../components/scroll';
 export default {
-  components: { HomeHeader ,HomeSlider},
+  components: { 
+    HomeScroll,
+    HomeHeader ,
+    HomeSlider,
+    HomeNav
+    },
   data() {
     return {
-      visible: true
+      recommends:[],
     };
   },
   methods: {
-    //API
-    show() {
-      this.visible = true;
-    },
-    hide() {
-      this.visible = false;
-    },
-    goTOsearch() {
-      this.$router.push("/search");
-    }
+  getRecommends(recommends){
+    this.recommends=recommends;
+  },
+  pullToRefrsh(end){
+
+  },
+  pullToLoadMore(end){
+
+  },
+  scroll(translate,scroll,pulling){
+
+  },
+  pullDownTransitionEnd(){
+
+  },
+  backToTop(){
+
+  },
+  changeHeaderStatus(){
+  
+  }
+
   }
 };
 </script>

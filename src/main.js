@@ -7,10 +7,13 @@ import './assets/scss/index.scss';
 import 'babel-polyfill';
 import MintUI from 'mint-ui' 
 import 'mint-ui/lib/style.css'
-//引入swiper 轮播图插件
+
+//引入轮播图插件
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 // require styles
 import 'swiper/dist/css/swiper.css'
+Vue.use(VueAwesomeSwiper, /* { default global options } */)
+
 //消除300毫秒延迟插件
 import fastclick from 'fastclick';
 //引入懒加载插件
@@ -21,7 +24,7 @@ Vue.use(VueLazyload,{
   error:'data-src'
 
 })
-Vue.use(MintUI)
+Vue.use(MintUI);
 //消除300毫秒延迟
 fastclick.attach(document.body);
 Vue.use(VueAwesomeSwiper, /* { default global options } */)

@@ -56,7 +56,6 @@ yarn run test:unit
 | ----------- | -------- | -------- | -------- |
 
 |     vue     |APP mooc商城|   7天  | yarn serve|
-=======
 
 
 ## 启动项目
