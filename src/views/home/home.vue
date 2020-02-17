@@ -12,7 +12,9 @@
        >
       <home-slider></home-slider>
       <home-nav></home-nav>
+      <home-recommend></home-recommend>
     </home-scroll>
+    <router-view></router-view>
     </div>
   
      <!-- pullDown
@@ -45,12 +47,14 @@ import HomeHeader from "../../components/header";
 import HomeSlider from "./slider";
 import HomeNav from './nav';
 import HomeScroll from '../../components/scroll';
+import HomeRecommend from './recommend';
 export default {
   components: { 
     HomeScroll,
     HomeHeader ,
     HomeSlider,
-    HomeNav
+    HomeNav,
+    HomeRecommend
     },
   data() {
     return {

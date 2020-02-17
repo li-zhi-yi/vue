@@ -9,7 +9,13 @@ export default new Router({
   routes:[
     {
       path:'/home',
-      component:Home
+      component:Home,
+      children:[
+        {
+          path:'product/:id',
+          component:()=>import('./views/product.vue')
+        }
+      ]
     },
     {
       path:'/category',

@@ -81,7 +81,7 @@ import MeLoading from '../../components/loading'
       // },
       getSliders(){
         return getHomeSlider().then(data=>{
-          console.log(data)
+          // console.log(data)
           this.sliders=data;
         })
       }

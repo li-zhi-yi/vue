@@ -1,16 +1,15 @@
 <template>
-        <ul class="tab">
+            <ul class="tab">
              <!-- <happy-scroll color="rgba(0,0,0,0.5)" > -->
             <li class="tab-item" v-for="(item ,index) in items" :key="index"
             :class="{'tab-item-active':item.id===curId}"
             @click="switchTab(item.id)"
-         >{{item.name}}</li>
+         >{{item.name,}}</li>
          <!-- </happy-scroll> -->
         </ul>
-    
 </template>
 <script>
-import {categoryNames} from './config'
+import {categoryNames} from './config';
 export default{
     data(){
         return {
@@ -26,12 +25,19 @@ export default{
             this.items=categoryNames
         },
         switchTab(id){
+            // console.log(id);
             if(this.curId===id){
                 return;
             }
             this.curId=id;
-            this.$emit('switch-tab',id);
+            // console.log(this.curId);
+            this.$emit('switch-tab',this.curId);
         }
+    },
+    watch:{
+        // curId(){
+        //     this.$emit('switch-tab',id);
+        // }
     }
 }
 </script>
@@ -62,11 +68,12 @@ export default{
         &:last-child{
             border-bottom:none;
         }
-        &-item-avtive{
-            background: none;
-            border-right:none;
-            color:#f23030;
-        }
+
     }
+}
+.tab-item-active{
+     background: none;
+     border-right:none;
+     color:#f23030;
 }
 </style>

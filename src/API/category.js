@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 import {SUCC_CODE, TIMEOUT} from './config';
 

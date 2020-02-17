@@ -18,13 +18,29 @@
 }
 </style>
 <script>
-import {swiper,swiperSlide} from 'vue-awesome-swiper'
+import {swiper,swiperSlide} from 'vue-awesome-swiper';
+import {
+    PULL_DOWN_HEIGHT,
+    PULL_DOWN_TEXT_INIT,
+    PULL_DOWN_TEXT_START,
+    PULL_DOWN_TEXT_ING,
+    PULL_DOWN_TEXT_END,
+    PULL_UP_HEIGHT,
+    PULL_UP_TEXT_INIT,
+    PULL_UP_TEXT_START,
+    PULL_UP_TEXT_ING,
+    PULL_UP_TEXT_END
+} from '../assets/JS/scroll';
 export default{
 components:{
     swiper,
     swiperSlide
 },
 props:{
+    scrollbar:{
+        type: Boolean,
+        default: true
+    },
     data:{
         type:[Array,Object]
     }
